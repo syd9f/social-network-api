@@ -1,4 +1,5 @@
 const { Schema, model } = require('mongoose');
+const reactionSchema = require('./Reactions');
 
 const thoughtSchema = new Schema(
   {
@@ -15,10 +16,7 @@ const thoughtSchema = new Schema(
       required: true 
     },
     reactions: [ 
-      {
-        type: Schema.Types.ObjectID, 
-        ref: 'reaction',
-      },
+      reactionSchema
     ],
   },
   {
